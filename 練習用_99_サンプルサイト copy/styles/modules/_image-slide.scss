@@ -11,17 +11,12 @@
     right: 0;
     bottom: 0;
     background-color: #eaebe6;
-    opacity: 0;
   }
   &.inview {
     &::after {
       opacity: 1;
 
-      @include animation(
-        $name: kf-cover-slide,
-        $duration: 1.6s,
-        $timing-function: ease-in-out
-      );
+      @include animation($name: kf-cover-slide, $duration: 1.6s, $timing-function: ease-in-out);
     }
   }
 }
@@ -51,12 +46,7 @@
   .inview & {
     opacity: 1;
     transition: transform 0.3s ease;
-    @include animation(
-      $name: kf-img-show,
-      $duration: 1.6s,
-      $timing-function: ease-in-out,
-      $fill-mode: normal
-    );
+    @include animation($name: kf-img-show, $duration: 1.6s, $timing-function: ease-in-out, $fill-mode: normal);
 
     &:hover {
       transform: scale(1.05);
@@ -91,12 +81,7 @@
     z-index: 1;
     transition: background-color 0.3s ease;
     pointer-events: none;
-    @include animation(
-      $name: kf-img-show,
-      $duration: 1.6s,
-      $timing-function: ease-in-out,
-      $fill-mode: normal
-    );
+    @include animation($name: kf-img-show, $duration: 1.6s, $timing-function: ease-in-out, $fill-mode: normal);
   }
   &:hover::before {
     background-color: rgba(0, 0, 0, 0.4);
